@@ -3,13 +3,14 @@ import { StatusCodes } from 'http-status-codes';
 
 import { CategoriesService } from '../services/categories.service';
 import { createCategoryDto } from '../dtos/categories.dto';
+import { BodyRequest } from './types';
 
 export class CategoriesController {
 
   constructor(private categoriesService: CategoriesService) { }
 
   create = async (
-    req: Request<unknown, unknown, createCategoryDto>,
+    req: BodyRequest<createCategoryDto>,
     res: Response,
     next: NextFunction,
   ) => {
