@@ -11,13 +11,12 @@ setupMongo().then(() => {
 
   app.use(
     cors({
-    origin: process.env.FRONT_URL,
-  })
-);
+      origin: process.env.FRONT_URL,
+    }),
+  );
   app.use(json());
   app.use(routes);
   app.use(errorHandler);
 
-  app.listen(3334, () => console.log('🚀 App is running at port 3334!'));
-})
-
+  app.listen(3333, () => console.log('🚀 App is running at port 3333!'));
+});
